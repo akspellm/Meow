@@ -13,7 +13,19 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
+//Set up default mongoose connection
+var configDB = require('./config/database');
+mongoose.connect(configDB.url);
 
+//Get the default connection
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
 
 // Start the API server
 app.listen(PORT, function() {
