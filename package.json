@@ -4,17 +4,30 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akspellm/Meow.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/akspellm/Meow.git",
+  "author": "<ashley.spellman@me.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/akspellm/Meow/issues"
   },
-  "homepage": "https://github.com/akspellm/Meow#readme"
+  "homepage": "https://github.com/akspellm/Meow#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.1",
+    "path": "^0.12.7",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.11"
+  }
 }
