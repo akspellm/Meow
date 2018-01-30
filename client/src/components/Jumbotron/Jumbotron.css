@@ -1,0 +1,11 @@
+.jumbotron {
+  background-image: url("https://naldzgraphics.net/wp-content/uploads/2013/02/32-kitten-cat-free-musical-repeat-seamless-pattern.jpg");
+  background-size: contain;
+}
+
+.text-box {
+  color: black;
+  background-color: rgba(255,172,129, 0.8);
+  margin-right: 250px;
+  padding: 0;
+}
