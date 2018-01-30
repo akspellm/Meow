@@ -2,18 +2,21 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
-import TranslationBox from "./components/TranslationBox";
-import Button from "./components/Button";
+import Translator from "./pages/Translator";
 
 const App = () =>
 
   <div>
-    <Nav />
-    <Jumbotron />
-    <TranslationBox>
-      <h2 className="translation-text">Hello!</h2>
-    </TranslationBox>
-    <Button />
+    <Router>
+      <div>
+        <Nav />
+        <Jumbotron />
+        <Switch>
+          <Route exact path="/" component={Translator} />
+          <Route exact path="/Translator" component={Translator} />
+        </Switch>
+      </div>
+    </Router>;
   </div>
 
 export default App;
