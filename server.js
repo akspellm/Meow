@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -12,6 +14,8 @@ app.use(bodyParser.json());
 app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
+
+passport.use(new GoogleStrategy()); 
 
 //Set up default mongoose connection
 var configDB = require('./config/database');
