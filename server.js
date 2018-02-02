@@ -1,9 +1,15 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const routes = require("./routes");
+const bodyParser = require("body-parser");
+const keys = require('./config/keys');
+
+require('./services/passport');
+
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI);
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -12,10 +18,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
-// Add routes, both API and view
-app.use(routes);
 
-passport.use(new GoogleStrategy()); 
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./routes/authRoutes')(app);
 
 //Set up default mongoose connection
 var configDB = require('./config/database');
