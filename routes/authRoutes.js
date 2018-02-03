@@ -4,7 +4,7 @@ module.exports = (app) =>{
 
 
   app.get(
-    '', (req, res) => {
+    '/', (req, res) => {
       res.send("hello world")
     }
   );
