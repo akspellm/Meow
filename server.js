@@ -8,8 +8,8 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport');
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect(keys.mongoURI);
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
