@@ -20,6 +20,11 @@ app.use(bodyParser.json());
 // Serve up static assets
 app.use(express.static("client/build"));
 
+app.use(cookieSession({
+  maxAge: 30 * 24 * 60 * 60 * 1000,
+  keys: [keys.cookieKey]
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
