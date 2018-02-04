@@ -1,36 +1,33 @@
 {
-  "name": "meow",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "node scripts/build.js",
-    "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "webhook": "./sendgrid_webhook.sh"
   },
-  "repository": "git+https://github.com/akspellm/Meow.git",
-  "author": "<ashley.spellman@me.com>",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/akspellm/Meow/issues"
-  },
-  "homepage": "https://github.com/akspellm/Meow#readme",
   "dependencies": {
-    "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
-    "cookie-session": "^2.0.0-beta.3",
-    "express": "^4.16.2",
-    "mongoose": "^5.0.1",
-    "passport": "^0.4.0",
+    "body-parser": "^1.17.2",
+    "concurrently": "^3.5.0",
+    "cookie-session": "^2.0.0-beta.2",
+    "express": "^4.15.3",
+    "localtunnel": "^1.8.3",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.11.1",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
     "passport-google-oauth20": "^1.0.0",
-    "path": "^0.12.7",
-    "react-router-dom": "^4.2.2"
-  },
-  "devDependencies": {
-    "concurrently": "^3.5.1",
-    "nodemon": "^1.14.11"
+    "path-parser": "^2.0.2"
   }
 }
