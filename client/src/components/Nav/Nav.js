@@ -16,6 +16,7 @@ const Nav = () =>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#about">About</a></li>
+            <li><a href="/auth/google">Login</a></li>
             <li><a href="/api/logout">Logout</a></li>
         </ul>
       </div>
