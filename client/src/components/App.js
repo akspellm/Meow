@@ -10,7 +10,7 @@ import Translator from "../pages/Translator";
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
-  };
+  }
 
   render() {
     return (
@@ -29,4 +29,4 @@ class App extends Component {
   }
 };
 
-export default connect(null, actions) (App)
+export default connect(null, actions)(App);
