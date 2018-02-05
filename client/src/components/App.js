@@ -5,7 +5,8 @@ import * as actions from '../actions';
 
 import Nav from "./Nav";
 import Jumbotron from "./Jumbotron";
-import Translator from "../pages/Translator";
+import Main from "../pages/Main";
+import About from "../pages/About";
 
 class App extends Component {
   componentDidMount() {
@@ -20,10 +21,12 @@ class App extends Component {
             <Nav />
             <Jumbotron />
             <Switch>
-              <Route exact path="/" component={Translator} />
+              <Route exact path="/" component={Main} />
+              <Route exact path="/login" component={Main} />
+              <Route exact path="/about" component={About} />
             </Switch>
           </div>
-        </Router>;
+        </Router>
       </div>
     )
   }

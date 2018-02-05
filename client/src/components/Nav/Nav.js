@@ -8,7 +8,7 @@ class Nav extends Component {
       case null:
         return;
       case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
+        return;
       default:
         return <li><a href="/api/logout">Logout</a></li>;
     }
@@ -30,7 +30,7 @@ class Nav extends Component {
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="#about">About</a></li>
+              <li><a href="/about">About</a></li>
               {this.renderContent()}
           </ul>
         </div>
