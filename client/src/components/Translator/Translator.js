@@ -8,7 +8,7 @@ class Translator extends Component {
   constructor() {
     super();
       this.state ={
-      chat: []
+        chat: []
       };
   };
   componentDidMount() {
