@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const keys = require('./config/keys');
 
 require('./models/User');
+require('./models/Chat');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
@@ -30,6 +31,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/index')(app);
+require('./routes/chat')(app);
 
 // Start the API server
 app.listen(PORT, function() {
