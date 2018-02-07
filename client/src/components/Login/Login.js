@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TranslationBox from "../../components/TranslationBox";
 import Button from "../../components/Button";
 
 import "./Login.css";

@@ -1,3 +1,8 @@
-getChat: function(id) {
-    return axios.get("/api/chat/" + id);
-  },
+import axios from "axios";
+
+export default {
+  // Gets all books
+  getBooks: function() {
+    return axios.get("/api/books");
+  }
+};

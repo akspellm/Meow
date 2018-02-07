@@ -6,6 +6,8 @@ import Translator from "../../components/Translator"
 import Login from "../../components/Login"
 
 class Main extends Component {
+
+
   renderContent() {
     switch (this.props.auth) {
       case null:
