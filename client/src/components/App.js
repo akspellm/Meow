@@ -11,7 +11,7 @@ import About from "../pages/About";
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser();
-    this.props.fetchChat();
+    // this.props.fetchChat();
   }
 
   render() {
