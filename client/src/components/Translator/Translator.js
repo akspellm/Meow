@@ -1,34 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchChat } from '../../actions'
 import TranslationBox from "../../components/TranslationBox";
 import Button from "../../components/Button";
 import axios from "axios"
 
 
 class Translator extends Component {
-  constructor() {
-    super();
-      this.state = {
-        chat: []
-      };
-  };
-  componentDidMount() {
-    // Get the data "soon
-    console.log('mount');
-    axios.get('/api/chat').then(res => {
-      this.setState({chat: res.data});
-      console.log(this.state.chat)
-    });
-  }
 
   render() {
     return (
       <div>
         <TranslationBox>
-          <h2 className="translation-text">{this.state.chat}</h2>
+          <h2 className="translation-text">{this.props.chat}</h2>
         </TranslationBox>
         <Button />
       </div>
       )}
 };
 
-export default Translator;
+function mapStateToProps({ chat }) {
+  return { chat };
+}
+
+export default connect(mapStateToProps)(Translator);
