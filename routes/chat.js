@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const Chat = mongoose.model('chat');
+const requireLogin = require("../middlewares/requireLogin")
 
 module.exports = app => {
-  app.get('/api/chat', async (req, res) => {
-    const chat = await Chat.find({ "emotion": "friendly"});
-    console.log("hi" + chat)
-    res.send("hi" + chat);
+  app.get('/api/chat', (req, res) => {
+    res.send("Hi!");
   })
 }
