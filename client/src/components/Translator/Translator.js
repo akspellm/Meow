@@ -7,7 +7,7 @@ import axios from "axios"
 class Translator extends Component {
   constructor() {
     super();
-      this.state ={
+      state = {
         chat: []
       };
   };
