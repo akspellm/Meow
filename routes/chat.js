@@ -15,10 +15,12 @@ module.exports = app => {
   app.get('/api/chat', (req, res) => {
     const thisChat = randomChat(catChat);
 
+    const date = new Date();
+
     const user = new UsersChat({
       userId: req.user.id,
       chat: thisChat,
-      date: new Date()
+      date: date.toLocaleDateString()
     }).save();
 
 

@@ -10,14 +10,12 @@ class ChatList extends Component {
   }
 
   renderChatList() {
-    console.log(this.chatList)
+    console.log(this.props.chatList)
     return this.props.chatList.reverse().map(chat => {
       return (
-        <div>
-          <tr>
-            <td>{chat.date}</td>
-            <td>{chat.chat}</td>
-          </tr>
+        <div className="container">
+          <h4> <strong>{chat.date}: </strong> <span className="chat-text">{chat.chat}</span></h4>
+          <hr></hr>
         </div>
       )
     })
@@ -25,60 +23,7 @@ class ChatList extends Component {
   render() {
     return (
       <div className="container">
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Date</th>
-              <th scope="col">Chat</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Hello!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Scratch my head!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Im hungry!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Scratch my head!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Lets cuddle!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Hello!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Lets cuddle!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Bow before me human</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Hello!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Im hungry!</td>
-            </tr>
-            <tr>
-              <td>Wed Feb 09 2018</td>
-              <td>Bow before me human</td>
-            </tr>
-          </tbody>
-        </table>
+            {this.renderChatList()}
       </div>
     );
   }
