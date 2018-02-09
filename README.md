@@ -20,8 +20,8 @@ A Full-Stack MERN application to help you translate your cat’s meows into huma
 ## Setup for Local Machine
 
 -	Create a ‘dev.js’ file in ‘Meow/config/’
--	Create an [mLab] (https://mlab.com/) database for development and export the MONGO_URI from your ‘dev.js’ file
--	Create a development project in [Google Cloud Platform] (https://console.cloud.google.com). Enable the Google+ API. Save the Client ID and Client secret for the newly created project in your ‘dev.js’ file.
+-	Create an [mLab](https://mlab.com/) database for development and export the MONGO_URI from your ‘dev.js’ file
+-	Create a development project in [Google Cloud Platform](https://console.cloud.google.com). Enable the Google+ API. Save the Client ID and Client secret for the newly created project in your ‘dev.js’ file.
 -	Run application using npm start or nodemon start
 
 ## Built With
