@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import "./Nav.css";
+
 class Nav extends Component {
   renderContent() {
 
@@ -12,6 +14,7 @@ class Nav extends Component {
         return;
       default:
         return [
+          <li className="profpic"><img src={this.props.auth.photo} alt="" /></li>,
           <li><Link to="/profile">Profile</Link></li>,
           <li><a href="/api/logout">Logout</a></li>
         ]
@@ -34,7 +37,6 @@ class Nav extends Component {
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="/about">About</a></li>
               {this.renderContent()}
           </ul>
         </div>
