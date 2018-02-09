@@ -9,3 +9,8 @@
   margin-right: 250px;
   padding: 0;
 }
+
+.main-text {
+  font-family: 'BioRhyme Expanded', serif!important;
+  font-size: 222%;
+}

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import Translator from "../../components/Translator"
 import Login from "../../components/Login"
 
+import "./main.css";
+
 class Main extends Component {
 
 

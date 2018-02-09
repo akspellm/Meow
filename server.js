@@ -7,6 +7,7 @@ const keys = require('./config/keys');
 
 require('./models/User');
 require('./models/Chat');
+require('./models/UsersChat');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;

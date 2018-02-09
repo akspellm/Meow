@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
   renderContent() {
+
     switch (this.props.auth) {
       case null:
         return;
       case false:
         return;
       default:
-        return <li><a href="/api/logout">Logout</a></li>;
+        return [
+          <li><Link to="/profile">Profile</Link></li>,
+          <li><a href="/api/logout">Logout</a></li>
+        ]
     }
   }
 
