@@ -1,4 +1,4 @@
-#Let’s Chat Meow!
+# Let’s Chat Meow!
 
 A Full-Stack MERN application to help you translate your cat’s meows into human speech*!
 
